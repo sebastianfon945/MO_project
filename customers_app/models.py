@@ -11,7 +11,7 @@ class Customer(models.Model):
     )
 
     created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateField()
+    updated_at = models.DateField(auto_now=True)
     external_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     score = models.DecimalField(max_digits=12, decimal_places=2)
-    status = models.IntegerField(choices=status_options) 
+    status = models.IntegerField(choices=status_options)
