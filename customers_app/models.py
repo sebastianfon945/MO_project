@@ -1,8 +1,9 @@
 from django.db import models
 import uuid
 
+
 # Create your models here.
-class Customers(models.Model):
+class Customer(models.Model):
 
     status_options = (
         (1, 'Activo'),
