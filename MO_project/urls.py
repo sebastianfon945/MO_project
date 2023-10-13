@@ -19,6 +19,7 @@ from django.urls import path, include
 from loans_app.views import (create_loan, list_loans, loans_by_customer,
                              loan_by_id)
 from customers_app.views import list_customer, create_customer, get_balance
+from payments_app.views import register_payment
 
 
 urlpatterns = [
@@ -29,6 +30,7 @@ urlpatterns = [
     path('loans/loan_by_id/', loan_by_id, name='loan_by_id'),
     path('customers/create_customer/', create_customer, name='create_customer'),
     path('customers/list_customer/', list_customer, name='list_customer'),
-    path('customers/get_balance/', get_balance, name='get_balance')
+    path('customers/get_balance/', get_balance, name='get_balance'),
+    path('payments/register_payment/', register_payment, name='register_payment'),
 
 ]

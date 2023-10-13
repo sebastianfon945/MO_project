@@ -13,25 +13,27 @@ class Payments(models.Model):
     )
 
     created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateField()
+    updated_at = models.DateField(auto_now=True)
     external_id = models.UUIDField(default=uuid.uuid4, editable=False,
                                    unique=True)
-    total_amount = models.DecimalField(max_digits=20, decimal_places=10)
+
+    amount = models.DecimalField(max_digits=20, decimal_places=10)
     status = models.IntegerField(choices=status_options)
 
 
 class PaymentDetail(models.Model):
 
     created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateField()
+    updated_at = models.DateField(auto_now=True)
     external_id = models.UUIDField(default=uuid.uuid4, editable=False,
                                    unique=True)
     payment_id = models.ForeignKey(Payments, to_field='external_id',
                                    on_delete=models.CASCADE,
-                                   related_name="payment_details")
+                                   related_name="payment_id")
 
-    loan = models.ForeignKey(Loans, to_field='external_id',
-                             on_delete=models.CASCADE,
-                             related_name="payment_details")
+    loan_id = models.ForeignKey(Loans, to_field='external_id',
+                                on_delete=models.CASCADE,
+                                related_name="loan_id",
+                                null=True)
 
     payment_amount = models.DecimalField(max_digits=12, decimal_places=2)
