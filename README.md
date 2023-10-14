@@ -17,6 +17,7 @@ docker run -p 8000:8000 mo_app:v1.0 python manage.py migrate
 Para generar una nueva API Key, ejecuta el siguiente comando:
 
 docker run -it -p 8000:8000 mo_app:v1.0 python manage.py makemigrations
+
 docker run -p 8000:8000 mo_app:v1.0 python manage.py migrate
 
 ### Creación de la API Key
