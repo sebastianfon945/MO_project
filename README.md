@@ -10,6 +10,7 @@ docker load -i mo_image.tar
 Antes de empezar a usar el proyecto, es esencial que apliques las migraciones para configurar la base de datos:
 
 docker run -it -p 8000:8000 mo_app:v1.0 python manage.py makemigrations
+
 docker run -p 8000:8000 mo_app:v1.0 python manage.py migrate
 
 ### Creación de la API Key
