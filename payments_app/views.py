@@ -1,18 +1,25 @@
 
-from django.shortcuts import get_object_or_404
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Payments
-from customers_app.models import Customer
 from loans_app.models import Loans
 from django.db.models import Sum
 from .serializer import PaymentsSerializer, PaymentDetailSerializer
 from decimal import Decimal
 
+
 @api_view(['POST'])
 def register_payment(request):
+    """
+    Registra un pago para un cliente en deuda.
 
+    Parámetros:
+    request (HttpRequest): La solicitud HTTP que contiene los datos del pago.
+
+    Retorna:
+    Response: Un objeto Response que contiene el resultado del registro del pago.
+
+    """
     customer = request.data.get('customer')
     amount = request.data.get('amount')
     request_data = request.data
