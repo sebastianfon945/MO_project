@@ -1,5 +1,5 @@
 
-Desplegando la Imagen de Docker
+# Desplegando la Imagen de Docker
 Carga la Imagen:
 Luego de obtener el archivo .tar, cárgalo en Docker con el siguiente comando:
 
@@ -16,7 +16,7 @@ docker run  -p 8000:8000 mo_app:v1.0 python manage.py migrate
 
 
 
-Creación de la API Key:
+# Creación de la API Key:
 Para generar una nueva API Key, ejecuta el siguiente comando:
 
 docker run -p 8000:8000 mo_app:v1.0 python manage.py apikey_gen
@@ -30,9 +30,9 @@ docker run -p 8000:8000 mo_app:v1.0 python manage.py runserver 0.0.0.0:8000
 Uso de los Endpoints
 Para hacer peticiones a los endpoints, deberás incluir la API Key en las cabeceras de tus peticiones: Authorization: Api-Key TU_API_KEY.
 
-Uso de los Endpoints
+# Uso de los Endpoints
 
-Servicios Customer
+## Servicios Customer
 Url base: http://127.0.0.1:8000/customers
 
 1. Crear un nuevo cliente (create_customer)
@@ -86,7 +86,7 @@ http
 GET /api/user/detail/<id_usuario>/
 
 
-Servicios Loans
+##Servicios Loans
 Url base: http://127.0.0.1:8000/loans
 1. Crear un nuevo préstamo (create_loan)
 Endpoint: /create_loan/
@@ -136,7 +136,7 @@ Uso:
 Para obtener una lista de préstamos asociados a un cliente específico, haz una solicitud GET al endpoint /customer_loans/ y proporciona el ID externo del cliente (en formato UUID) como un parámetro de consulta. Por ejemplo, para listar préstamos del cliente con ID externo "550e8400-e29b-41d4-a716-446655440000", usarías: /customer_loans/?customer=550e8400-e29b-41d4-a716-446655440000.
 
 
-Servicios Customer
+## Servicios Customer
 Url base: http://127.0.0.1:8000/payments
 
 Registrar Pago (register_payment)
