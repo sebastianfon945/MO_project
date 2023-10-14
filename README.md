@@ -25,6 +25,7 @@ docker run -p 8000:8000 mo_app:v1.0 python manage.py runserver 0.0.0.0:8000
 
 ## Uso de los Endpoints 
 Para hacer peticiones a los endpoints, deberás incluir la API Key en las cabeceras de tus peticiones: `Authorization: Api-Key TU_API_KEY`.
+**Nota**: Los IDs que se envían en las peticiones corresponden a los `external_id` de los modelos involucrados en cada petición (external_id, customer->external_id de customer, loan_id->external_id de loan)
 
 ### Servicios Customer
 
