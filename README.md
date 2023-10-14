@@ -5,6 +5,11 @@ Luego de obtener el archivo .tar, cárgalo en Docker con el siguiente comando:
 
 docker load -i mo_image.tar
 
+También es posible obtenerla directamente desde el repositorio:
+
+docker pull ghcr.io/sebastianfon945/mo_app:v1.0
+
+
 ## Configuración del Servidor Django
 
 ### Inicialización de la Base de Datos
@@ -15,13 +20,31 @@ docker run -it -p 8000:8000 mo_app:v1.0 python manage.py makemigrations
 docker run -p 8000:8000 mo_app:v1.0 python manage.py migrate
 
 
+desde el repositorio:
+
+docker run -it -p 8000:8000 ghcr.io/sebastianfon945/mo_app:v1.0 python manage.py makemigrations
+
+docker run -p 8000:8000 ghcr.io/sebastianfon945/mo_app:v1.0 python manage.py migrate
+
+
+
+
+
 ### Creación de la API Key
 Para generar una nueva API Key, ejecuta el siguiente comando:
 
 docker run -p 8000:8000 mo_app:v1.0 python manage.py apikey_gen
 
+desde el repositorio:
+
+docker run -p 8000:8000 ghcr.io/sebastianfon945/mo_app:v1.0 python manage.py apikey_gen
+
 ### Ejecuta el Contenedor
 docker run -p 8000:8000 mo_app:v1.0 python manage.py runserver 0.0.0.0:8000
+
+desde el repositorio:
+
+docker run -p 8000:8000 ghcr.io/sebastianfon945/mo_app:v1.0 python manage.py runserver 0.0.0.0:8000
 
 ## Uso de los Endpoints 
 Para hacer peticiones a los endpoints, deberás incluir la API Key en las cabeceras de tus peticiones: `Authorization: Api-Key TU_API_KEY`.
