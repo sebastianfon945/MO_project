@@ -43,12 +43,13 @@ Método: POST
 Cuerpo de la solicitud (JSON):
 
 
-
+```
 {
     "external_id": "550e8400-e29b-41d4-a716-446655440000",
     "score": 750.00,
     "status": 1
 }
+```
 Uso:
 Para crear un nuevo cliente, debes hacer una solicitud POST al endpoint /create_customer/ con los datos del cliente en formato JSON. El campo created_at se genera automáticamente al crear el registro y el updated_at se actualiza automáticamente cada vez que se modifica el registro.
 
@@ -95,13 +96,14 @@ Método: POST
 
 Cuerpo de la solicitud (JSON):
 
-
+```
 {
     "customer": "da6a1e82-8a50-40fc-af52-694f33eb37fb",
     "amount": 500.0,
     "outstanding": 500.0,
     "status": 1
 }
+```
 Uso:
 Para crear un nuevo préstamo, haz una solicitud POST al endpoint /create_loan/ con los datos del préstamo en formato JSON. El sistema verificará si el cliente asociado existe, si está activo y si el total de préstamos pendientes no excede el puntaje del cliente antes de crear el préstamo.
 
@@ -151,7 +153,7 @@ Permite registrar un nuevo pago para un cliente que tiene una deuda.
 
 Cuerpo de la solicitud (JSON):
 
-
+```
 
 {
     "customer": "da6a1e82-8a50-40fc-af52-694f33eb37fb",
@@ -165,5 +167,5 @@ Cuerpo de la solicitud (JSON):
     ]
 }
 
-
+```
 
