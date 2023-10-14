@@ -1,7 +1,8 @@
 # Desplegando la Imagen de Docker
 
 ## Carga la Imagen
-Luego de obtener el archivo .tar, cárgalo en Docker con el siguiente comando
+Luego de obtener el archivo .tar, cárgalo en Docker con el siguiente comando:
+
 docker load -i mo_image.tar
 
 ## Configuración del Servidor Django
